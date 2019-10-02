@@ -48,7 +48,7 @@ export default {
 
     console.log('mounted');
 
-    fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple', {
+    fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple', {
       method:'get',
     }).then((response)=>{
       return response.json();

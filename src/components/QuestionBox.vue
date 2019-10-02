@@ -16,6 +16,7 @@
         @click.prevent = "selectAnswer(index)"
         :class = "[selectedIndex === index ? 'selected' : '']"
         v-html="answer"
+        :disabled="show_buttons == false"
       >
       </b-list-group-item>
 
@@ -36,10 +37,10 @@
 
       <b-card bg-variant="danger" text-variant="white" class="text-center mb-4" v-if="info_wrong">
         <div style="display:flex;justify-content:space-between">
-        <p>
-        
+        <p style="text-align:left;">        
           You are wrong!
-          The answer is {{current_correct_answer}}
+          The answer is 
+          <span v-html="current_correct_answer"></span>
         </p>
         <div>
         <b-button @click="proceed" class="ml-2" variant="light" href="#" :disabled="selectedIndex == null">Continue</b-button>
